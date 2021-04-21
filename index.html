@@ -25,21 +25,22 @@
 
             <!-- New Todo Section -->
             <section class="new-todo">
-                <input type="text" placeholder="Nuovo Todo" v-model="newTodo">
+                <input type="text" placeholder="Nuovo Todo" v-model="newTodo" @keyup.enter="addTodo">
                 <button class="btn" @click="addTodo">Aggiungi</button>
             </section>
 
             <!-- Section Todos -->
             <section class="todos">
                 <div class="todos-container">
-                    <ul>
+                    <ul v-if="todos.length > 0">
                         <!-- Single Todo -->
-                        <li v-for="todo in todos">
+                        <li v-for="(todo, index) in todos">
                             <span>{{ todo }}</span>
-                            <span class="delete"><i class="fas fa-times"></i></span>
+                            <span class="delete" @click="removeTodo(index)"><i class="fas fa-times"></i></span>
                         </li>                      
 
                     </ul>
+                    <div v-else>Non ci sono Todo da mostrare...</div>
                 </div>
             </section>
 

@@ -19,8 +19,13 @@ var app = new Vue(
         methods: {
             // Add a new Todo to the list
             addTodo() {
-                this.todos.push(this.newTodo);
-                this.newTodo = '';
+                if (this.newTodo.length > 0) {
+                    this.todos.push(this.newTodo);
+                    this.newTodo = '';
+                }                
+            },
+            removeTodo(index) {
+                this.todos.splice(index, 1);
             }
             
         }
