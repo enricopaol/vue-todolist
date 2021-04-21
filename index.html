@@ -26,8 +26,9 @@
             <!-- Filter Todo Section -->
             <section class="filter-todo">
                 <label for="filter">Filtra:</label>
-                <input id="filter" type="text" placeholder="Search...">                
+                <input id="filter" type="text" placeholder="Search..." v-model="filterTodo" @keyup="searchTodo">                
             </section>
+
             <!-- New Todo Section -->
             <section class="new-todo">
                 <input type="text" placeholder="Nuovo Todo" v-model="newTodo" @keyup.enter="addTodo">
@@ -39,10 +40,11 @@
                 <div class="todos-container">
                     <ul v-if="todos.length > 0">
                         <!-- Single Todo -->
-                        <li v-for="(todo, index) in todos">
+                        <li v-for="(todo, index) in todos" v-if="todo.found">
                             <span>{{ todo.text }}</span>
                             <span class="delete" @click="removeTodo(index)"><i class="fas fa-times"></i></span>
-                        </li>                      
+                        </li>       
+                                      
 
                     </ul>
                     <div v-else>Non ci sono Todo da mostrare...</div>

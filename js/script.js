@@ -39,6 +39,15 @@ var app = new Vue(
             },
             removeTodo(index) {
                 this.todos.splice(index, 1);
+            },
+            searchTodo() {
+                this.todos.forEach((element) => {
+                    if(element.text.toLowerCase().includes(this.filterTodo.toLowerCase())) {
+                        element.found = true;
+                    } else {
+                        element.found = false;
+                    }                    
+                })
             }
             
         }
