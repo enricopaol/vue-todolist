@@ -21,7 +21,20 @@ header .logo img {
     margin: auto;
 }
 
-/* New Todo */
+/* Filter Todo */
+.filter-todo {
+    text-align: center;
+    padding-top: 30px;
+}
+.filter-todo input {
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 200px;
+    border-width: 2px;
+    outline: none;
+    margin-left: 15px;
+}
+/* New Todo & Filter Todo*/
 .new-todo {
     text-align: center;
     padding: 30px 0;

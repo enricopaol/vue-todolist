@@ -9,18 +9,31 @@ var app = new Vue(
     {
         el: '#root',
         data: {
+            newTodo: '',
+            filterTodo: '',
             todos: [
-                'Fare i compiti',
-                'Fare la spesa',
-                'Fare il bucato'
-            ],
-            newTodo: ''
+                {
+                    text: 'Fare i compiti',
+                    found: true
+                },
+                {
+                    text: 'Fare la spesa',
+                    found: true
+                },
+                {
+                    text: 'Fare il bucato',
+                    found: true
+                }
+            ]            
         },
         methods: {
             // Add a new Todo to the list
             addTodo() {
                 if (this.newTodo.length > 0) {
-                    this.todos.push(this.newTodo);
+                    this.todos.push({
+                        text: this.newTodo,
+                        found: true 
+                    });
                     this.newTodo = '';
                 }                
             },
