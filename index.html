@@ -44,7 +44,7 @@
                             <span>{{ todo.text }}</span>
                             <span class="delete" @click="removeTodo(index)"><i class="fas fa-times"></i></span>
                         </li>       
-                                      
+                        <div v-if="matchNotFound()">Nessuna corrispondenza trovata..</div>                                  
 
                     </ul>
                     <div v-else>Non ci sono Todo da mostrare...</div>

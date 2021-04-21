@@ -37,18 +37,30 @@ var app = new Vue(
                     this.newTodo = '';
                 }                
             },
+            // Remove a Todo
             removeTodo(index) {
                 this.todos.splice(index, 1);
             },
+            // Filtering Todos
             searchTodo() {
-                this.todos.forEach((element) => {
+                this.todos.forEach((element) => {                    
                     if(element.text.toLowerCase().includes(this.filterTodo.toLowerCase())) {
                         element.found = true;
                     } else {
                         element.found = false;
-                    }                    
+                    }                        
+                })              
+            },
+            // When Todo not found
+            matchNotFound() {
+                let elementFound = [];
+                this.todos.forEach((element) => {                                       
+                    elementFound.push(element.found);                        
                 })
-            }
+                if(!elementFound.includes(true)) {
+                    return true;
+                }
+            }           
             
         }
     }
