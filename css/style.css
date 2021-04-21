@@ -8,3 +8,61 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
+
+.app-wrapper {
+    width: 80%;
+    margin: auto;
+}
+
+/* Header e logo */
+header .logo img {
+    width: 300px;
+    display: block;
+    margin: auto;
+}
+
+/* New Todo */
+.new-todo {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.new-todo input {
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 300px;
+    border-width: 2px;
+    outline: none;
+    margin-right: 15px;
+}
+
+.new-todo button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: 2px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Todos Section */
+.todos .todos-container {
+    background-color: #f4f7f7;
+    padding: 40px;
+}
+.todos ul {
+    list-style-type: none;
+}
+
+.todos ul li {
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.todos ul li:hover {
+    background-color: #fff;
+}
+
+.todos ul li .delete {
+    float: right; 
+    vertical-align: middle;
+    cursor: pointer;    
+}
